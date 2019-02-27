@@ -39,6 +39,7 @@ dependencies {
     //compile 'org.glassfish.main.extras:glassfish-embedded-all:4.0-b72'
     implementation 'javax:javaee-api:8.0'
     implementation "com.google.protobuf:protobuf-java:${PROTOBUF_VERSION}"
+    implementation 'org.xerial:sqlite-jdbc:3.25.2'
     testImplementation 'junit:junit:4.10'
 }
 

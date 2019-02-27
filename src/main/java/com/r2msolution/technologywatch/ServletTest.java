@@ -7,6 +7,11 @@ package com.r2msolution.technologywatch;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,7 +48,27 @@ public class ServletTest extends HttpServlet {
             out.println("<h1>Servlet ServletTest at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");*/
-            request.getRequestDispatcher("TW/navbars.html").forward(request, response);
+            //request.getRequestDispatcher("TW/navbars.html").forward(request, response);
+            try {
+                Class.forName("org.sqlite.JDBC");
+                Connection con = DriverManager.getConnection("jdbc:sqlite:h:\\idk.db");
+                String sql1 = "create table if not exists users  (" +
+                "user_string TEXT\n" +
+                ")";
+                //String sql2 = "insert into users VALUES('IM ALIVE')";
+                String sql3 = "select user_string from users";
+                con.createStatement().executeUpdate(sql1);
+                //con.createStatement().executeUpdate(sql2);
+                ResultSet set = con.prepareStatement(sql3).executeQuery();
+                String coso = "VUOTA";
+                if (set.next()) {
+                    coso = set.getString(1);
+                }
+                out.println("<h1>"+coso+"</h1>");
+                //request.getRequestDispatcher("TW/navbars.html").forward(request, response);
+            } catch (Exception e) {
+                out.println("<h1>"+e.getMessage()+"</h1>");
+            }
         }
     }
 
