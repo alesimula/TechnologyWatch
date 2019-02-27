@@ -11,5 +11,14 @@
       <task-args/>
       <task-jvm-args/>
     </task>
+    <task>
+      <display-name>glassfishStop</display-name>
+      <non-blocking>no</non-blocking>
+      <task-names>
+        <name must-exist="no">glassfishStop</name>
+      </task-names>
+      <task-args/>
+      <task-jvm-args/>
+    </task>
   </common-tasks>
 </gradle-project-properties>
