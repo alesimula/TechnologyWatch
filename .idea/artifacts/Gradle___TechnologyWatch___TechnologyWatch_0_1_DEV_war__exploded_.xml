@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : TechnologyWatch : TechnologyWatch-0.1-DEV.war (exploded)">
+    <output-path>$PROJECT_DIR$/build/libs/exploded/TechnologyWatch-0.1-DEV.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/TechnologyWatch-0.1-DEV.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="TechnologyWatch.TechnologyWatch.main/web/Web Gradle : TechnologyWatch-0.1-DEV.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TechnologyWatch.TechnologyWatch.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: javax:javaee-api:8.0" />
+          <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:3.6.1" />
+          <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.6.0" />
+          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

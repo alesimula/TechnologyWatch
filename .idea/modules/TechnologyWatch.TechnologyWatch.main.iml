@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="TechnologyWatch:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="TechnologyWatch" external.system.module.type="sourceSet" external.system.module.version="0.1-DEV" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web Gradle : TechnologyWatch-0.1-DEV.war">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+    <output url="file://$MODULE_DIR$/../../out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../build/extracted-include-protos/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../build/extracted-include-protos/main" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../build/extracted-protos/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../build/extracted-protos/main" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../build/generated/source/proto/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/source/proto/main" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/proto" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.websocket:javax.websocket-api:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax:javaee-api:8.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-java:3.6.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.mail:javax.mail:1.6.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax.activation:activation:1.1" level="project" />
+  </component>
+</module>

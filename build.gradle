@@ -1,0 +1,136 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+        classpath "gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:0.5"
+    }
+}
+
+//TEST LINK: http://localhost:8080/TechnologyWatch-0.1-DEV
+
+group 'TechnologyWatch'
+version '0.1-DEV'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'org.jetbrains.gradle.plugin.idea-ext'
+apply plugin: 'com.google.protobuf'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+sourceCompatibility = 1.7
+
+repositories {
+    maven {
+        url 'https://maven.java.net/content/groups/promoted'
+    }
+    maven {
+        url 'http://repository.jboss.org/nexus/content/groups/public'
+    }
+}
+
+final String PROTOBUF_VERSION = '3.6.1'
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    //compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.5'
+    //compile 'org.glassfish.main.extras:glassfish-embedded-all:4.0-b72'
+    implementation 'javax:javaee-api:8.0'
+    implementation "com.google.protobuf:protobuf-java:${PROTOBUF_VERSION}"
+    //implementation "com.google.protobuf:protobuf-all:${PROTOBUF_VERSION}"
+    testImplementation 'junit:junit:4.10'
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ['src/main/java/']
+        proto.srcDirs = ['src/main/proto/']
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${PROTOBUF_VERSION}"
+    }
+    generateProtoTasks {
+        def genProtoTasks = ofSourceSet('main')
+        genProtoTasks*.builtins {
+            java {
+                outputSubDir = ''
+            }
+            js {
+                option 'import_style=commonjs'
+                option 'binary'
+                option 'output_dir=node/*'
+                outputSubDir = ''
+            }
+        }
+        rootProject.extensions.idea.project.settings {
+            taskTriggers {
+                beforeBuild(genProtoTasks as Task[])
+            }
+        }
+    }
+    generatedFilesBaseDir = "${projectDir}/build/generated/source/proto"
+}
+
+/*sourceSets {
+ main {
+   output.resourcesDir = 'build/classes/main'
+   //output.classesDir = 'build/classes/main'
+   output.classesDirs = ['build/classes/main']
+ }
+ test {
+   output.resourcesDir = 'build/classes/test'
+   //output.classesDir = 'build/classes/test'
+   output.classesDirs = ['build/classes/test']
+ }
+}*/
+
+/*Change with your glassfish home*/
+final String glassfishHome = '/opt/glassfish5'
+
+task glassfishStart(dependsOn: 'war', type:Exec) {
+    workingDir "${glassfishHome}${File.separator}bin"
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat'
+    } else {
+        commandLine "./asadmin"
+    }
+    args "start-domain"
+}
+
+task run(dependsOn: 'war', type:Exec) {
+    workingDir "${glassfishHome}${File.separator}bin"
+
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat'
+    } else {
+        commandLine "./asadmin"
+    }
+
+    args "deploy", "--force=true", "${war.archivePath}"
+}
+
+/*task(run, dependsOn: 'classes', type: JavaExec) {
+ description = 'Runs the main application'
+ main = 'com.r2msolution.technologywatch.EmbeddedRunner'
+ classpath = sourceSets.main.runtimeClasspath
+}*/
+
+/*gretty {
+  httpsEnabled = true
+  // optionally you can specify port. 8443 is the default.
+  contextPath = '/application'
+  httpPort = 8080
+  httpsPort = 8081
+}*/
+

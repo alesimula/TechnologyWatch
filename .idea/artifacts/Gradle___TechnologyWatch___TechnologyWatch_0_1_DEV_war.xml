@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : TechnologyWatch : TechnologyWatch-0.1-DEV.war">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$" />
+    </properties>
+    <root id="archive" name="TechnologyWatch-0.1-DEV.war">
+      <element id="artifact" artifact-name="Gradle : TechnologyWatch : TechnologyWatch-0.1-DEV.war (exploded)" />
+    </root>
+  </artifact>
+</component>
