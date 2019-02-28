@@ -2002,10 +2002,11 @@ a.large
   overflow-y: hidden;
   white-space: nowrap;
 
-  ::-webkit-scrollbar {
-display: none;
+::-webkit-scrollbar {
+  display: none;
 }
 }
+
 .tabs li
 {
   list-style: none;

@@ -4,8 +4,7 @@
     <facet type="web" name="Web Gradle : TechnologyWatch-0.1-DEV.war">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
-          <root url="file://$MODULE_DIR$/../../build/generated/source/proto/main/js" relative="/TW/js/proto" />
+          <root url="file://C:\Users\lucas\IdeaProjects\TechnologyWatch\src\main\webapp" relative="/" />
         </webroots>
       </configuration>
     </facet>
@@ -13,19 +12,12 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../build/extracted-include-protos/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../build/extracted-include-protos/main" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../build/extracted-protos/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../build/extracted-protos/main" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../build/generated/source/proto/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/source/proto/main" isTestSource="false" />
-    </content>
+    <content url="file://$MODULE_DIR$/../../build/extracted-include-protos/main" />
+    <content url="file://$MODULE_DIR$/../../build/extracted-protos/main" />
+    <content url="file://$MODULE_DIR$/../../build/generated/source/proto/main" />
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/proto" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
