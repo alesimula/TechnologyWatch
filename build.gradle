@@ -58,6 +58,7 @@ protobuf {
         def genProtoTasks = ofSourceSet('main')
         genProtoTasks*.builtins {
             java {
+                option 'output_dir=java'
                 outputSubDir = ''
             }
             js {
