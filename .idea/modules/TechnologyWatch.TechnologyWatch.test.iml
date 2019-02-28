@@ -9,9 +9,7 @@
     <content url="file://$MODULE_DIR$/../../build/extracted-protos/test">
       <sourceFolder url="file://$MODULE_DIR$/../../build/extracted-protos/test" isTestSource="true" />
     </content>
-    <content url="file://$MODULE_DIR$/../../build/generated/source/proto/test/java">
-      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/source/proto/test/java" isTestSource="true" />
-    </content>
+    <content url="file://$MODULE_DIR$/../../build/generated/source/proto/test/java" />
     <content url="file://$MODULE_DIR$/../../src/test" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
