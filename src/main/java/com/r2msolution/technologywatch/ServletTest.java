@@ -49,9 +49,9 @@ public class ServletTest extends HttpServlet {
             out.println("</body>");
             out.println("</html>");*/
             //request.getRequestDispatcher("TW/navbars.html").forward(request, response);
-            try {
-                Class.forName("org.sqlite.JDBC");
-                Connection con = DriverManager.getConnection("jdbc:sqlite:h:\\idk.db");
+            try {Class.forName("org.sqlite.JDBC");}
+            catch (Exception e) {}
+            try (Connection con = DriverManager.getConnection("jdbc:sqlite:TechnologyWatch.db");) {
                 String sql1 = "create table if not exists users  (" +
                 "user_string TEXT\n" +
                 ")";
@@ -65,6 +65,7 @@ public class ServletTest extends HttpServlet {
                     coso = set.getString(1);
                 }
                 out.println("<h1>"+coso+"</h1>");
+                con.close();
                 //request.getRequestDispatcher("TW/navbars.html").forward(request, response);
             } catch (Exception e) {
                 out.println("<h1>"+e.getMessage()+"</h1>");
