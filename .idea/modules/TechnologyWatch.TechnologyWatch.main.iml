@@ -6,15 +6,25 @@
         <webroots>
           <root url="file://C:\Users\lucas\IdeaProjects\TechnologyWatch\src\main\webapp" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/../../src/main/java" />
+          <root url="file://$MODULE_DIR$/../../src/main/proto" />
+        </sourceRoots>
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../build/extracted-include-protos/main" />
-    <content url="file://$MODULE_DIR$/../../build/extracted-protos/main" />
-    <content url="file://$MODULE_DIR$/../../build/generated/source/proto/main" />
+    <content url="file://$MODULE_DIR$/../../build/extracted-include-protos/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../build/extracted-include-protos/main" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../build/extracted-protos/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../build/extracted-protos/main" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../build/generated/source/proto/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/source/proto/main" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/proto" isTestSource="false" />
